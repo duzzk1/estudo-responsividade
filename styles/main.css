@@ -1,7 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   padding: 0;
   margin: 0;
   width: auto 0;
+  min-height: 100vh;
 }
 /* Inicio cabeçalho */
 header {
@@ -43,15 +50,6 @@ li:hover {
 
 /* Inicio Principal 1*/
 
-main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  text-align: left;
-  justify-items: center;
-}
-
 .inscreva-se-agora {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 40px;
@@ -71,7 +69,6 @@ section {
 h2 {
   font-weight: 600;
   font-size: 40px;
-  line-height: 1vh;
 }
 
 p {
@@ -123,6 +120,173 @@ article img {
   width: 100%;
   height: 20px;
 }
+
+.newslatter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  text-align: left;
+  justify-items: center;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+}
+
+.card {
+  position: relative;
+  width: 600px;
+  height: 270px;
+  background: rgb(227, 230, 230);
+  border-radius: 20px;
+  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.15);
+  transition: 0.5s;
+}
+
+.card:hover {
+  height: 450px;
+}
+
+.imgBx {
+  position: absolute;
+  left: 50%;
+  top: -50px;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 150px;
+  background: rgb(226, 230, 230);
+  border-radius: 20px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.35);
+  transition: 0.5s;
+}
+
+.card:hover .imgBx {
+  width: 250px;
+  height: 250px;
+}
+
+.imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card .content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.card .content .details {
+  padding: 40px;
+  text-align: center;
+  width: 100%;
+  transition: 0.5s;
+  transform: translateY(150px);
+}
+.card:hover .content .details {
+  transform: translateY(0px);
+}
+.card .content .details h2 {
+  font-size: 1.25em;
+  font-weight: 600;
+  color: #555;
+  line-height: 1.2em;
+}
+
+.card .content .details h4 {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #555;
+  line-height: 1.2em;
+  transition: 0.3s;
+  animation: passe-o-mouse 2s infinite;
+}
+
+@keyframes passe-o-mouse {
+  0% {
+    color: cyan;
+  }
+  50% {
+    color: rgb(0, 98, 255);
+  }
+  100% {
+    color: cyan;
+  }
+}
+
+.card:hover .content .details h4 {
+  font-weight: 600;
+  color: #555;
+  line-height: 1.2em;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.card .content .details h2 span {
+  font: 0.75em;
+  font-weight: 500;
+  opacity: 0.5;
+}
+.card .content .details .data {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 20px 0;
+}
+
+.card .content .details .data h3 {
+  font-size: 1em;
+  color: #555;
+  line-height: 1.2em;
+  font-weight: 600;
+}
+
+.card .content .details .data h3 span {
+  font-size: 0.85em;
+  font-weight: 400;
+  opacity: 0.5;
+}
+
+.card .content .details .actionBtn {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.card .content .details .actionBtn a {
+  text-decoration: none;
+  color: white;
+}
+
+.card .content .details .actionBtn button {
+  padding: 10px 30px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  font-weight: 500;
+  background: rgba(0, 229, 255, 0.757);
+  color: white;
+  cursor: pointer;
+}
+
+.card .content .details .actionBtn button:nth-child(2) {
+  border: 1px solid #999;
+  color: #999;
+  background: #ffff;
+}
+
+/*INICIO MEDIA QUERY*/
 
 @media screen and (max-width: 875px) {
   body {
